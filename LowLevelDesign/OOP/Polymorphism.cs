@@ -6,9 +6,48 @@ using System.Threading.Tasks;
 
 namespace LowLevelDesign.OOP
 {
-    internal class Polymorphism
+    public class Vehicle
     {
+        public int Id { get; set; }
+
+        //public virtual void Idf()
+        //{
+        //    Console.WriteLine(Id + " from base");
+        //}
+
+        public virtual void greet()
+        {
+            Console.WriteLine("Heelo");
+        }
     }
+
+    public class Vech1 : Vehicle
+    {
+        public Vech1(int i)
+        {
+            this.Id = i;
+        }
+        public void Idf()
+        {
+            Console.WriteLine(Id + " from home");
+        }
+    }
+
+    public class Vech2 : Vehicle
+    {
+        public Vech2(int i)
+        {
+            this.Id = i;
+        }
+        public void Idf()
+        {
+            Console.WriteLine(Id + " from home");
+        }
+    }
+
+
+
+
 }
 
 /*
@@ -78,6 +117,23 @@ class Program
         Base obj = new Derived();
         obj.Show(); // Output: Base.Show (not overridden)
     }
+}
+
+
+Why use   
+
+public virtual void greet()
+        {
+            Console.WriteLine("Heelo");
+        }
+
+List<Vehicle> vehicles = new List<Vehicle>();
+
+foreach(Vehicle vh in vehicles)
+{
+    Console.WriteLine(vh.Id);
+    vh.greet(); // this will exsist
+    vh.Idf(); // this is obviously not exsist
 }
 
 */
