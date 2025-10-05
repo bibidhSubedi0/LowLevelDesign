@@ -37,4 +37,8 @@ Abstract base class: Use if the base class should not be instantiated directly.
 
 
 Liskov Substitution Principle (L in SOLID): Subclasses should be usable in place of the base class without altering correctness.
+
+
+The Fragile Base Class Problem occurs in object-oriented programming when changes to a base (parent) class unintentionally break the behavior of derived (child)
+
 */
