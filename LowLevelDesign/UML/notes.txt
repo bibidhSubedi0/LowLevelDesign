@@ -1,0 +1,43 @@
+﻿-> UML is a standardized visual language for describing, designing, and documenting software systems.
+
+
+---------------------------------
+|        ClassName              |
+---------------------------------
+| - privateField : Type         |
+| + PublicProperty : Type       |
+---------------------------------
+| + PublicMethod() : ReturnType |
+| # ProtectedMethod() : void    |
+---------------------------------
+
+| Symbol / Arrow                            | Meaning                                                  |                                            |
+| ----------------------------------------- | -------------------------------------------------------- | ------------------------------------------ |
+| A —— B                                    |   Association   (“has-a”)                                |                                            |
+| A ◇—— B                                   |   Aggregation   (A has B, but B can exist independently) |                                            |
+| A ◆—— B                                   |   Composition   (A owns B’s lifetime)                    |                                            |
+| A ──▶ B (dashed)                          |   Dependency   (A uses B temporarily)                    |                                            |
+| A ⟶                                      | B (solid line with empty triangle)                       |   Inheritance / Generalization   (`A : B`) |
+| A ⟶▷ B (dashed line with empty triangle) |   Realization / Implements   (class → interface)         |                                            |
+
+
+
+          <<interface>>
+          IEngine
+             ▲
+             │  «realize»
+   -------------------------
+   | PetrolEngine          |
+   -------------------------
+   | + Start() : void      |
+   -------------------------
+
+   -------------------------
+   | Car                    |
+   -------------------------
+   | - _engine : IEngine    |
+   -------------------------
+   | + Start() : void       |
+   -------------------------
+        ◆─── IEngine
+

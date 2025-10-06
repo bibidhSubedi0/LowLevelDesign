@@ -7,4 +7,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="SOLID\SRP\BetterDesign.hpp" />
+    <Compile Include="SOLID\SRP\MyOldDesign.hpp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UML\" />
+  </ItemGroup>
+
 </Project>
