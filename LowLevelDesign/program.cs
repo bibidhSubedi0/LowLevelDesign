@@ -24,15 +24,13 @@ ct.addMemento(tx.createMemento());
 tx.setState(t, s, cf);
 tx.showState();
 
+
 Console.WriteLine("-----------------------");
 
-tx.showState();
-Console.WriteLine("-----------------------");
-
-// User pressed undo
+Console.WriteLine("User pressed undo\n");
 tx.restoreMemento(ct.getLastMemento());
 tx.showState();
 
-// User pressed undo again
+Console.WriteLine("User pressed undo again\n");
 tx.restoreMemento(ct.getLastMemento());
 tx.showState();

@@ -50,8 +50,8 @@ using System.Threading.Tasks;
 
 namespace LowLevelDesign.DesignPatterns.Behavioural
 {
-
-    internal class TextEditorMemento // Memento
+    public interface ITextEditorMemento { }
+    internal class TextEditorMemento : ITextEditorMemento
     {
         private string _title;
         private string _content;
@@ -85,15 +85,14 @@ namespace LowLevelDesign.DesignPatterns.Behavioural
         private string _content;
         private string _configString;
 
-        public TextEditorMemento createMemento()
+
+        public ITextEditorMemento createMemento() => new TextEditorMemento(_title, _content, _configString);
+        public void restoreMemento(ITextEditorMemento m)
         {
-            return new TextEditorMemento(_title, _content, _configString);
-        }
-        public void restoreMemento(TextEditorMemento m)
-        {
-            _title = m.getTitle();
-            _content = m.getContent();
-            _configString = m.getConfig();
+            TextEditorMemento mem = (TextEditorMemento)m;
+            _title = mem.getTitle();
+            _content = mem.getContent();
+            _configString = mem.getConfig();
         }
         public void showState()
         {
@@ -113,13 +112,13 @@ namespace LowLevelDesign.DesignPatterns.Behavioural
 
     class CareTaker
     {
-        private Stack<TextEditorMemento> _mementoList;
+        private Stack<ITextEditorMemento> _mementoList;
         public CareTaker()
         {
-            _mementoList = new Stack<TextEditorMemento>();
+            _mementoList = new Stack<ITextEditorMemento>();
         }
-        public void addMemento(TextEditorMemento memento) => _mementoList.Push(memento);
-        public TextEditorMemento getLastMemento() => _mementoList.Pop();
+        public void addMemento(ITextEditorMemento memento) => _mementoList.Push(memento);
+        public ITextEditorMemento getLastMemento() => _mementoList.Pop();
 
     }
 
