@@ -1,0 +1,37 @@
+﻿Intro
+Design patterns are reusable solutions to common software design problems that occur repeatedly in object-oriented systems.
+
+Gang of Four – GoF
+1. Creational Patterns
+Deal with object creation mechanisms, 
+trying to make the system independent of how its objects are created or composed.
+    Singleton – Only one instance.
+    Factory Method – Let subclasses decide object creation.
+    Abstract Factory – Create families of related objects.
+    Builder – Step-by-step object construction.
+    Prototype – Clone existing objects.
+
+2. Structural Patterns
+Deal with class and object composition 
+— how to form larger structures while keeping them flexible.
+    Adapter – Convert one interface to another.
+    Bridge – Decouple abstraction from implementation.
+    Composite – Treat individual and composite objects uniformly.
+    Decorator – Add behavior dynamically.
+    Facade – Simplified interface to a complex system.
+    Flyweight – Share objects efficiently.
+    Proxy – Substitute or control access to another object.
+
+3. Behavioral Patterns
+Deal with object interaction and responsibility distribution
+— how objects communicate and collaborate
+    Strategy – Switch algorithms at runtime.
+    Observer – Notify multiple objects of state changes.
+    Command – Encapsulate requests as objects.
+    State – Change behavior when state changes.
+    Iterator – Access elements sequentially.
+    Mediator – Reduce direct communication between objects.
+    Memento – Save and restore object states.
+    Chain of Responsibility – Pass request along a chain of handlers.
+    Interpreter, Template Method, Visitor – specialized behaviors.
+

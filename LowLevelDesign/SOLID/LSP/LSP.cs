@@ -12,6 +12,7 @@ namespace LowLevelDesign.SOLID.LSP
 }
 
 /*
+ * Liskov Substitution Principle
     “Objects of a superclass should be replaceable with objects of its subclasses without breaking the correctness of the program.”
 
 If S is a subclass of T, then anywhere you use a T, you should be able to use an S without the program misbehaving.

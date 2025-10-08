@@ -1,0 +1,7 @@
+﻿Behavioral patterns define how objects interact, communicate, and share responsibilities.
+
+“Design an event notification system” → Observer
+“Switch between algorithms at runtime” → Strategy
+“Undo/Redo functionality” → Command / Memento
+“Handle requests in a chain” → Chain of Responsibility
+“Change behavior as state changes” → State
