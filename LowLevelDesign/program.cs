@@ -1,8 +1,12 @@
-﻿using LowLevelDesign.DesignPatterns.Behavioural.State;
+﻿using LowLevelDesign.DesignPatterns.Behavioural.Strategy;
 
-var conn = new TCPConnection();
 
-conn.Open();     // Closed → Listening
-conn.Open();     // Listening → Established
-conn.Send("Hello");
-conn.Close();    // Established → Closed
+
+Character ch =  new Character();
+ch.Attack();
+ch.Emote();
+ch.SetAttack(new SwordAttack());
+ch.Attack();
+ch.SetAttack(new MagicAttack());
+ch.Attack();
+ch.Emote();
