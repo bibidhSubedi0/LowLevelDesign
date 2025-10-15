@@ -1,0 +1,31 @@
+﻿
+Creational design patterns deal with how objects are created in an object-oriented system.
+
+They abstract the creation process, so the system only knows what kind of object it wants, not how to make it.
+
+Database* db = new MySQLDatabase();
+Now if you want to switch to PostgreSQLDatabase,
+you must go back and change everywhere that does new MySQLDatabase().
+
+Creational patterns make it possible to:
+Change which classes are instantiated (e.g., normal room → enchanted room)
+Decide when and how objects are created (e.g., lazy initialization)
+Control who creates them (e.g., a single factory, builder, or prototype)
+Avoid global variables or tight coupling
+
+| Pattern              | Core Idea                                                      | Analogy                                                                                                             | When to Use                                                         |
+| -------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+|   Factory Method     | Let subclasses decide which class to instantiate.              | A restaurant chain where each branch makes its own local-style pizza, but all follow the same “makePizza()” method. | When a class can’t anticipate which subclass it must create.        |
+|   Abstract Factory   | Provide an interface for creating families of related objects. | A furniture shop that can produce *modern* or *Victorian* furniture sets (chairs, tables, sofas) together.          | When you want to ensure related objects are created consistently.   |
+|   Builder            | Separate object construction from representation.              | Building a car step-by-step — engine, wheels, body — via a “director” and “builder”.                                | When creating complex objects that require step-by-step assembly.   |
+|   Prototype          | Create new objects by copying existing ones.                   | Duplicating a pre-configured document template.                                                                     | When object creation is expensive or complex.                       |
+|   Singleton          | Ensure only one instance of a class exists globally.           | One central control tower managing all flights.                                                                     | When exactly one instance is needed (e.g., logging, configuration). |
+
+
+Two Core Themes Across All Creational Patterns
+
+Encapsulate knowledge of concrete classes
+→ Clients depend only on abstract interfaces, not specific implementations.
+
+Hide the instantiation logic
+→ Clients don’t need to know how objects are created — only that they can be created.
