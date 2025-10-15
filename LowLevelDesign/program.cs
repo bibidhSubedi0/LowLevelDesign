@@ -1,13 +1,25 @@
-﻿using LowLevelDesign.DesignPatterns.Behavioural.Iterator;
-
-BookCollection library = new BookCollection(); // std::vector<int> vec = {10,20,...,100};
-
-library.AddBook(new Book("1984"));
-library.AddBook(new Book("Dune"));
-library.AddBook(new Book("Foundation"));
+﻿using LowLevelDesign.DesignPatterns.Behavioural.Mediator;
 
 
-for (var itr = library.Begin(); itr != library.End(); itr++)
-{
-    Console.WriteLine(itr.Current.Title);
-}
+TextBox username = new TextBox("Username");
+TextBox password = new TextBox("Password");
+Button loginButton = new Button("LoginButton");
+
+LoginBoxMediator dialog = new LoginBoxMediator();
+dialog.Register(username);
+dialog.Register(password);
+dialog.Register(loginButton);
+
+// Right now login button
+Console.WriteLine(loginButton.Enabled.ToString());
+
+// Entered Username and password
+username.Content = "Whatever";
+
+Console.WriteLine(loginButton.Enabled.ToString());
+
+password.Content = "fuckoff";
+
+
+
+Console.WriteLine(loginButton.Enabled.ToString());
