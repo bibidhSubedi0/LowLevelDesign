@@ -1,7 +1,17 @@
-﻿using LowLevelDesign.DesignPatterns.Creational.Factory;
+﻿using LowLevelDesign.DesignPatterns.Creational.Prototype;
 
-IDocumentHander handler = new PDFHandler();
 
-IDocument newdoc =  handler.CreateDocument("DocName");
 
-handler.OpenDocument(newdoc);
+Troop BaseTroop = new Troop("Brabarain", 50, "Sword");
+
+Troop fastBrab = (Troop)BaseTroop.Clone();
+fastBrab.Name = "Fast Barb";
+fastBrab.Weapon = "Boot";
+
+Troop Flyingbabr = (Troop)BaseTroop.Clone();
+Flyingbabr.Name = "Flyingbabr";
+Flyingbabr.Weapon = "Wings";
+
+
+fastBrab.Show();
+Flyingbabr.Show();
