@@ -1,9 +1,16 @@
-﻿using LowLevelDesign.DesignPatterns.Creational.Singelton;
+﻿using LowLevelDesign.DesignPatterns.Creational.Builder;
 
+var pdfBuilder = new PDFDocumentBuilder();
+var director = new DocumentDirector(pdfBuilder);
 
+// Build the document (using director)
+director.ConstructSample();
 
-var logger = Logger.GetLogger();
+// Get the built document
+Document pdf = pdfBuilder.GetDocument();
 
-logger.Log("Fuck this shit mainnn");
-Logger.SetInstance(new FileLogger());
-logger.Log("Fuckkk file systmess");
+// Add more manually if desired
+pdf.AddText("WTF", "UpperCase");
+
+// Now render everything
+pdf.Show();
