@@ -1,17 +1,9 @@
-﻿using LowLevelDesign.DesignPatterns.Creational.Prototype;
+﻿using LowLevelDesign.DesignPatterns.Creational.Singelton;
 
 
 
-Troop BaseTroop = new Troop("Brabarain", 50, "Sword");
+var logger = Logger.GetLogger();
 
-Troop fastBrab = (Troop)BaseTroop.Clone();
-fastBrab.Name = "Fast Barb";
-fastBrab.Weapon = "Boot";
-
-Troop Flyingbabr = (Troop)BaseTroop.Clone();
-Flyingbabr.Name = "Flyingbabr";
-Flyingbabr.Weapon = "Wings";
-
-
-fastBrab.Show();
-Flyingbabr.Show();
+logger.Log("Fuck this shit mainnn");
+Logger.SetInstance(new FileLogger());
+logger.Log("Fuckkk file systmess");
